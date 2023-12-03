@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitrine de Vendas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="financa.png" type="image/x-icon">
+<link rel="shortcut icon" href="/caminho/para/o/favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .imovel {
+      width: 30%;
+      margin: 20px 0;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .imovel:hover {
+      transform: scale(1.05);
+    }
+
+    .imovel img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .imovel-info {
+      padding: 20px;
+    }
+
+    .imovel-info h3 {
+      margin-top: 0;
+      color: #3498db;
+    }
+
+    .contact-form {
+      display: none;
+      background-color: #ecf0f1;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .contact-form h2 {
+      color: #3498db;
+      margin-bottom: 20px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #bdc3c7;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #2980b9;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .feature {
+      width: 30%;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .feature h3 {
+      color: #3498db;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 10px;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vitrine de Vendas</h1>
+    <p>Página de apresentação, o que acha de conseguir um crédito para conquistar um desses sonhos para você?</p>
+  </header>
+
+  <section>
+    <div class="imovel" onclick="showContactForm('Imóvel Luxuoso')">
+      <img src="casa1.jpg" alt="Imóvel Luxuoso">
+      <img src="casa2.jpg" alt="Imóvel Luxuoso">
+      <div class="imovel-info">
+        <h3>Imóvel Luxuoso</h3>
+        <p>*CASA EM ALVENARIA BAIRRO XAXIM CURITIBA<br>
+
+        <br>CASA COM EDICULA AREA CONSTRUIDA APROXIMADA (AD CORPUS) DE 185M2 TERRENO 11 35X30 (340 50) CONTENDO :
+        <br>4 QUARTOS (SENDO UMA SUITE)
+        <br>COZINHA
+        <br>GARAGEM COBERTA
+        <br>AREA DE SERVICO</p>
+        <p>Preço: R$ 490.000</p>
+        <a href="#">Saiba mais</a>
+      </div>
+    </div>
+
+    <div class="imovel" onclick="showContactForm('Apartamento Moderno')">
+      <img src="carro1.jpg" alt="Audi A4">
+      <img src="carro2.jpg" alt="Audi A4">
+      <div class="imovel-info">
+        <h3>Audi A4</h3><h6>1.8 TFSI ATTRACTION MULTITRONIC 4P</h6>
+        <p>Lindo AUDI A4 1.8 CVT 2016. Carro em EXCELENTE estado, completo, design moderno, amplo espaço interno,<br> porta malas enorme, econômico, carro PERFEITO para o dia a dia</p>
+        <p>Preço: R$ 99.900</p>
+        <a href="#">Saiba mais</a>
+      </div>
+    </div>
+
+    <!-- Adicione mais blocos de imóveis conforme necessário -->
+
+  </section>
+
+  <div class="contact-form" id="contactForm">
+    <h2>Entre em Contato - <span id="imovelName"></span></h2>
+    <form>
+      <label for="nome">Seu Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="numeroContato">Número para Contato:</label>
+      <input type="tel" id="numeroContato" name="numeroContato" required>
+
+      <label for="descricao">Descreva sua condição financeira e requisitos:</label>
+      <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+      <button type="button" onclick="submitForm()">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+
+  <section>
+    <div class="features">
+          <div class="feature">
+        <h3>Transparência nos Custos</h3>
+        <p>Meu trabalho é ser transparente e te ajudar da melhor forma possivel a conseguir o crédito para adiquirir um desses modelos acima, que são um dos vários ainda disponiveis com meus parceiros que trabalham na area de venda como corretor.</p>
+      </div>
+</div>
+
+  <footer>
+    <p>&copy; 2023 Sua Imobiliária. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function showContactForm(imovelName) {
+      document.getElementById('imovelName').innerText = imovelName;
+      document.getElementById('contactForm').style.display = 'block';
+    }
+
+    function submitForm() {
+      // Adicione aqui a lógica para enviar o formulário (por exemplo, usando AJAX)
+      alert('Sua mensagem foi enviada com sucesso!');
+      // Limpe o formulário e esconda-o após o envio
+      document.getElementById('contactForm').style.display = 'none';
+    }
+    
+    function showReferralForm() {
+    // Exibe o formulário de indicação
+    document.getElementById('referralForm').style.display = 'block';
+  }
+
+  function submitReferral() {
+    // Adicione aqui a lógica para processar a indicação (enviar para o back-end, por exemplo)
+    alert('Sua indicação foi enviada com sucesso!');
+    // Limpe o formulário e esconda-o após o envio
+    document.getElementById('referralForm').style.display = 'none';
+  }
+  </script>
+</body>
+</html>

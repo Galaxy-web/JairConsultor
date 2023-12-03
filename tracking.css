@@ -1,0 +1,133 @@
+/* Reset de estilos para garantir uma base consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #3498db;
+    margin: 15px 0;
+}
+
+/* Tracking Section */
+#tracking-section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+#tracking-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#tracking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+#tracking-table th, #tracking-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#tracking-table th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+#tracking-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Buttons */
+.green-button, .red-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+    background-color: #2ecc71;
+}
+
+.red-button:hover {
+    background-color: #e74c3c;
+}
+
+/* Chart Section */
+#chart-section {
+    text-align: center;
+}
+
+#status-chart {
+    max-width: 80%;
+    margin: 20px auto;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    #tracking-section h2 {
+        font-size: 2em;
+    }
+
+    #tracking-table {
+        font-size: 0.9em;
+    }
+
+    .green-button, .red-button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+    #status-chart {
+        max-width: 100%;
+    }
+}

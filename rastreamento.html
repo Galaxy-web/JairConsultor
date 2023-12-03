@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tracking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="financa.png" type="image/x-icon">
+<link rel="shortcut icon" href="/caminho/para/o/favicon.ico" type="image/x-icon">
+    <title>Acompanhamento de Agendamentos</title>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Acompanhamento de Agendamentos</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="tracking-section">
+            <h2>Lista de Agendamentos</h2>
+            <table id="tracking-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Número</th>
+                        <th>Valor de Entrada</th>
+                        <th>Melhor Valor de Parcelas</th>
+                        <th>Melhor Data para Visitar</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- As linhas da tabela serão adicionadas dinamicamente via JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="chart-section">
+            <h2>Contagem de Status</h2>
+            <canvas id="status-chart"></canvas>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 [Nome da Sua Empresa]. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="tracking-script.js"></script>
+    <script>
+        // Função para obter parâmetros da URL
+        function getParameterByName(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+
+        // Processa os parâmetros da URL
+        const name = getParameterByName('name');
+        const phone = getParameterByName('phone');
+        const entryAmount = getParameterByName('entryAmount');
+        const installmentAmount = getParameterByName('installmentAmount');
+        const bestDate = getParameterByName('bestDate');
+
+        // Adiciona os dados do agendamento à tabela
+        if (name && phone && entryAmount && installmentAmount && bestDate) {
+            const formData = {
+                name: name,
+                phone: phone,
+                entryAmount: entryAmount,
+                installmentAmount: installmentAmount,
+                bestDate: bestDate,
+            };
+
+            // Adiciona a linha à tabela
+            addTableRow(formData, 'Agendado');
+        }
+    </script>
+</body>
+</html>
